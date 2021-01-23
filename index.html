@@ -1,0 +1,356 @@
+<html>
+
+<head>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="user.css">
+  <style>
+    .pageContent {
+      margin-top: 70px !important;
+      margin: 20px;
+    }
+
+    .pageNavigation {
+      position: fixed;
+      width: 100%;
+      z-index: 1;
+      top: 0px;
+      margin: 0px;
+    }
+
+    .hide {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="row pageNavigation">
+    <div class="col-md-12">
+      <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="#">User Management</a>
+          </div>
+          <ul class="nav navbar-nav">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Contact Us</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li class="createAccountLink"><a href="javascript:void(0)"><span class="glyphicon glyphicon-user"></span> Create Account</a></li>
+            <li class="loginLink active"><a href="javascript:void(0)"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+            <li class="logoutLink hide" onclick="logout()"><a href="javascript:void(0)"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+  <div class="pageContent">
+    <div class="row pages loginPage">
+      <div class="col-md-12">
+        <form name="f1">
+          <div class="form-group">
+            <label for="Name"> Email:</label>
+            <input type="text" class="form-control" id="lemail" name="vam" placeholder="Enter email">
+            <span class="text-danger hide" id="name1">Username cannot be empty</span>
+          </div>
+          <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" class="form-control" id="lpassword" name="vam2" placeholder="Enter password">
+            <span class="text-danger hide" id="name2">Password cannot be empty</span>
+          </div>
+          <div class="text-center">
+            <button type="button" class="btn btn-md btn-success" onclick="login()">Login </button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="row pages createAccountPage hide">
+      <div class="col-md-12">
+        <form name="f2">
+          <div class="form-group">
+            <label for="firstname">First Name:</label>
+            <input type="text" class="form-control" id="firstname" name="vam3" placeholder="Enter firstname">
+            <span class="text-danger hide" id="name3">First name cannot be empty</span>
+          </div>
+          <div class="form-group">
+            <label for="lastname">Last Name:</label>
+            <input type="text" class="form-control" id="lastname" name="vam4" placeholder="Enter lastname">
+            <span class="text-danger hide" id="name4">Last name cannot be empty</span>
+          </div>
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" class="form-control" id="email1" name="email" placeholder="Enter email">
+            <span class="text-danger hide" id="email2">email cannot be empty</span>
+            <span class="text-danger hide" id="email3">Enter valid email id</span>
+          </div>
+          <div class="form-group">
+            <label for="password1">Password:</label>
+            <input type="password" class="form-control" id="password1" name="vam5" placeholder="Enter password">
+            <span class="text-danger hide" id="name5">Password cannot be empty</span>
+          </div>
+          <div class="form-group">
+            <label for="password2">Confirm Password:</label>
+            <input type="password" class="form-control" id="password2" name="vam6" placeholder="Enter password again">
+            <span class="text-danger hide" id="name6">Password cannot be empty</span>
+            <span class="text-danger hide" id="pass">Password Doesn't match</span>
+          </div>
+          <div class="form-group">
+            <label for="age">Age:</label>
+            <input type="number" class="form-control" id="age" name="vam7" placeholder="Enter Age">
+            <span class="text-danger hide" id="name7">Age cannot be empty</span>
+          </div>
+          <div class="form-group">
+            <h3>Gender</h3>
+            <input type="radio" id="gender" name="gender" value="male">
+            <label for="male">Male</label><br>
+            <input type="radio" id="gender1" name="gender" value="female">
+            <label for="female">Female</label><br>
+            <span class="text-danger hide" id="name8">Gender cannot be empty</span>
+          </div>
+          <div class="form-group">
+            <label for="hero">Favorite hero :</label>
+            <select id="hero" name="hero">
+              <option value="">--</option>
+              <option value="vijay">vijay</option>
+              <option value="mahesh">mahesh</option>
+              <option value="prabhas">prabhas</option>
+            </select>
+            <span class="text-danger hide" id="name9">Favorite hero cannot be empty</span>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input admin" type="checkbox" id="admin" value="Admin">
+            <label class="form-check-label" for="admin">Is Admin</label>
+          </div>
+          <div class="text-center">
+            <button type="button" class="btn btn-md btn-success" onclick="createAccount()">Sign up </button>
+
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="row pages homePage hide">
+      <div class="col-md-12">
+        <div id="mySidenav2" class="sidenav2">
+          <a href="javascript:void(0)" class="closebtn2" onclick="closeNav2()">&times;</a>
+          <h2 style="color: green; margin-left: 35px;">Dashboard</h2>
+          <a href="javascript:void(0)" onclick="myaccount()">My account</a>
+          <a href="javascript:void(0)" onclick="users()">Users</a>
+        </div>
+        <span style="font-size:30px;cursor:pointer" onclick="openNav2()">&#9776; Users info</span>
+        <h1 id="welcomeMessage"></h1>
+        <table class="table table-striped table-responsive" id="userListTable">
+          <thead>
+            <tr>
+              <th>FirstName</th>
+              <th>LastName</th>
+              <th>Email</th>
+              <th>Age</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="row pages homePage2 hide">
+      <div class="col-md-12">
+        <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Users info</span>
+        <div id="mySidenav" class="sidenav">
+          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+          <h2 style="color: green; margin-left: 35px;">Dashboard</h2>
+          <a href="javascript:void(0)" onclick="myaccount()">My account</a>
+          <a href="javascript:void(0)" onclick="users()">Users</a>
+        </div>
+        <h1 id="welcomeMessage2"></h1>
+
+        <tbody>
+
+        </tbody>
+
+      </div>
+    </div>
+
+
+    <div class="row pages homePage1 hide">
+      <div class="col-md-12">
+        <h1 id="welcomeMessage4"></h1>
+        <table class="table table-striped table-responsive" id="userListTable">
+          <thead>
+            <tr>
+              <th>FirstName</th>
+              <th>LastName</th>
+              <th>Email</th>
+              <th>Age</th>
+              <th>Is Admin</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="row pages homePage3 hide">
+      <div class="col-md-12">
+        <h1 id="welcomeMessage5"></h1>
+        <table class="table table-striped table-responsive" id="userListTable1">
+          <thead>
+            <tr>
+              <th>FirstName</th>
+              <th>LastName</th>
+              <th>Email</th>
+              <th>Age</th>
+              <th>Is Admin</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="row pages homePage4 hide">
+      <div class="col-md-12">
+        <div id="mySidenav1" class="sidenav1">
+          <a href="javascript:void(0)" class="closebtn1" onclick="closeNav1()">&times;</a>
+          <h2 style="color: green; margin-left: 35px;">Dashboard</h2>
+          <a href="javascript:void(0)" onclick="myaccount()">My account</a>
+          <a href="javascript:void(0)" onclick="users()">Users</a>
+        </div>
+        <span style="font-size:30px;cursor:pointer" onclick="openNav1()">&#9776; Users info</span>
+        <h1 id="welcomeMessage6"></h1>
+        <table class="table table-striped table-responsive" id="userListTable2">
+          <thead>
+            <tr>
+              <th>FirstName</th>
+              <th>LastName</th>
+              <th>Email</th>
+              <th>Age</th>
+              <th>Is Admin</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="row pages homePage5 hide">
+      <div class="col-md-12">
+        <h1 id="welcomeMessage7"></h1>
+        <table class="table table-striped table-responsive" id="userListTable2">
+          <thead>
+            <tr>
+              <th>FirstName</th>
+              <th>LastName</th>
+              <th>Email</th>
+              <th>Age</th>
+              <th>Is Admin</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+
+
+  <!-- Modal -->
+  <div class="modal fade" id="editUserModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="editUserModalLabel">Edit User Details</h4>
+        </div>
+        <div class="modal-body">
+          <form>
+            <span class="selectedEditUserId hide"></span>
+            <div class="form-group">
+              <label for="firstName">First Name</label>
+              <input type="text" class="form-control" id="firstNameEdit" placeholder="Enter First Name">
+            </div>
+            <div class="form-group">
+              <label for="lastName">Last Name</label>
+              <input type="text" class="form-control" id="lastNameEdit" placeholder="Enter Last Name">
+            </div>
+            <div class="form-group">
+              <label for="email">Email address</label>
+              <input type="email" class="form-control" id="emailEdit" placeholder="Enter email">
+            </div>
+            <div class="form-group">
+              <label for="age">Age</label>
+              <input type="number" class="form-control" id="ageEdit" placeholder="Enter Your Age">
+            </div>
+
+          </form>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" onclick="editUser()">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="modal fade" id="editUserModal1" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="editUserModalLabel">Edit Password Details</h4>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-group">
+              <label for="changepassword">current password</label>
+              <input type="text" class="form-control" id="currentpassword" placeholder="current password">
+              <span class="text-danger hide" id="pass5">Current password is incorrect </span>
+            </div>
+            <div class="form-group">
+              <label for="changepassword">Change password</label>
+              <input type="text" class="form-control" id="changepassword" placeholder="change password">
+            </div>
+            <div class="form-group">
+              <label for="changepassword">re type password</label>
+              <input type="text" class="form-control" id="changepassword1" placeholder="re type password">
+              <span class="text-danger hide" id="pass6">re type password is incorrect </span>
+
+            </div>
+          </form>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" onclick="editpassword()">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script src="user.js"></script>
+</body>
+
+</html>
