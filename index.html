@@ -1,30 +1,10 @@
 <html>
-
 <head>
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <link rel="stylesheet" href="user.css">
-  <style>
-    .pageContent {
-      margin-top: 70px !important;
-      margin: 20px;
-    }
-
-    .pageNavigation {
-      position: fixed;
-      width: 100%;
-      z-index: 1;
-      top: 0px;
-      margin: 0px;
-    }
-
-    .hide {
-      display: none;
-    }
-  </style>
-</head>
-
-<body>
+ </head>
+ <body>
   <div class="row pageNavigation">
     <div class="col-md-12">
       <nav class="navbar navbar-inverse">
@@ -125,13 +105,11 @@
           </div>
           <div class="text-center">
             <button type="button" class="btn btn-md btn-success" onclick="createAccount()">Sign up </button>
-
-          </div>
+        </div>
         </form>
       </div>
     </div>
-
-    <div class="row pages homePage hide">
+     <div class="row pages homePage hide">
       <div class="col-md-12">
         <div id="mySidenav2" class="sidenav2">
           <a href="javascript:void(0)" class="closebtn2" onclick="closeNav2()">&times;</a>
@@ -152,8 +130,7 @@
             </tr>
           </thead>
           <tbody>
-
-          </tbody>
+      </tbody>
         </table>
       </div>
     </div>
@@ -167,15 +144,10 @@
           <a href="javascript:void(0)" onclick="users()">Users</a>
         </div>
         <h1 id="welcomeMessage2"></h1>
-
-        <tbody>
-
+    <tbody>
         </tbody>
-
       </div>
     </div>
-
-
     <div class="row pages homePage1 hide">
       <div class="col-md-12">
         <h1 id="welcomeMessage4"></h1>
@@ -191,8 +163,7 @@
             </tr>
           </thead>
           <tbody>
-
-          </tbody>
+    </tbody>
         </table>
       </div>
     </div>
@@ -211,8 +182,7 @@
             </tr>
           </thead>
           <tbody>
-
-          </tbody>
+         </tbody>
         </table>
       </div>
     </div>
@@ -238,8 +208,7 @@
             </tr>
           </thead>
           <tbody>
-
-          </tbody>
+         </tbody>
         </table>
       </div>
     </div>
@@ -263,11 +232,7 @@
         </table>
       </div>
     </div>
-
-  </div>
-
-
-  <!-- Modal -->
+   </div>
   <div class="modal fade" id="editUserModal" tabindex="-1" role="dialog">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
@@ -294,19 +259,15 @@
               <label for="age">Age</label>
               <input type="number" class="form-control" id="ageEdit" placeholder="Enter Your Age">
             </div>
-
-          </form>
-        </div>
-
-        <div class="modal-footer">
+        </form>
+         </div>
+   <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
           <button type="button" class="btn btn-primary" onclick="editUser()">Save changes</button>
         </div>
       </div>
     </div>
   </div>
-
-
   <div class="modal fade" id="editUserModal1" tabindex="-1" role="dialog">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
@@ -329,11 +290,9 @@
               <label for="changepassword">re type password</label>
               <input type="text" class="form-control" id="changepassword1" placeholder="re type password">
               <span class="text-danger hide" id="pass6">re type password is incorrect </span>
-
             </div>
           </form>
         </div>
-
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
           <button type="button" class="btn btn-primary" onclick="editpassword()">Save changes</button>
@@ -341,16 +300,8 @@
       </div>
     </div>
   </div>
-
-
-
-
-
-
-  <!-- Latest compiled and minified JavaScript -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   <script src="user.js"></script>
 </body>
-
-</html>
+ </html>
