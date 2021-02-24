@@ -1,3 +1,20 @@
+  .pageContent {
+      margin-top: 70px !important;
+      margin: 20px;
+    }
+
+    .pageNavigation {
+      position: fixed;
+      width: 100%;
+      z-index: 1;
+      top: 0px;
+      margin: 0px;
+    }
+
+    .hide {
+      display: none;
+    }
+
 body {
     font-family: "Lato", sans-serif;
   }
@@ -39,12 +56,7 @@ body {
   @media screen and (max-height: 450px) {
     .sidenav {padding-top: 15px;}
     .sidenav a {font-size: 18px;}
-  }
-  
-
-
-
-  
+  } 
   .sidenav1 {
     height: 100%;
     width: 0;
@@ -56,9 +68,8 @@ body {
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 60px;
-  }
-  
-  .sidenav1 a {
+  } 
+.sidenav1 a {
     padding: 8px 8px 8px 32px;
     text-decoration: none;
     font-size: 25px;
@@ -82,12 +93,8 @@ body {
   @media screen and (max-height: 450px) {
     .sidenav1 {padding-top: 15px;}
     .sidenav1 a {font-size: 18px;}
-  }
-  
-
-
-    
-  .sidenav2 {
+  } 
+.sidenav2 {
     height: 100%;
     width: 0;
     position: fixed;
